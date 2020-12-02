@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace SweepstakesZ
 {
-    class Program
+    class MarketingFirm
     {
-        static void Main(string[] args)
-        {
-            Simulation simulation = new Simulation();
-            simulation.Simulate();
 
+        public MarketingFirm()
+        {
+
+        }
+
+        public void BeginSweepstakes()
+        {
+            //Contestant contestant6 = UserInterface.AddConstestant();
+            //Contestant contestant7 = UserInterface.AddConstestant();
             Contestant contestant3 = UserInterface.AddConstestant("Smith", "Longbottom", "sipping@whisky.com");
             Contestant contestant4 = UserInterface.AddConstestant("James", "Cordin", "hates@whisky.com");
             Contestant contestant5 = UserInterface.AddConstestant("Katie", "Gladwell", "yummy@whisky.com");
@@ -20,6 +25,8 @@ namespace SweepstakesZ
             Contestant contestant2 = UserInterface.AddConstestant("Bob", "Willbert", "chug@whisky.com");
 
             Sweepstakes toyota = new Sweepstakes("Toyota");
+
+
 
             toyota.RegisterContestant(contestant1);
             toyota.RegisterContestant(contestant2);

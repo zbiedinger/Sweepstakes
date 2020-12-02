@@ -42,5 +42,24 @@ namespace SweepstakesZ
             contestant.email = Console.ReadLine();
             Console.WriteLine($"\n{contestant.firstName}'s email address has been changed to {contestant.email}");
         }
+
+        //Used for any user prompts that use a yes or now format.
+        public static bool ContinuePrompt(string output)
+        {
+            Console.WriteLine(output);
+            string input = Console.ReadLine().ToLower();
+            switch (input)
+            {
+                case "y":
+                case "yes":
+                    return true;
+                case "n":
+                case "no":
+                    return false;
+                default:
+                    Console.WriteLine("\nInvalid input");
+                    return ContinuePrompt(output);
+            }
+        }
     }
 }
