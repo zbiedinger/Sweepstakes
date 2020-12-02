@@ -10,13 +10,15 @@ namespace SweepstakesZ
     {
         static void Main(string[] args)
         {
-            Contestant contestant = new Contestant("Jim", "Beam", "drinks@whisky.com", 1);
-            Contestant contestant2 = new Contestant("Bob", "Willbert", "chug@whisky.com", 2);
-            Contestant contestant3 = new Contestant("Smith", "Longbottom", "sipping@whisky.com", 3);
-            Contestant contestant4 = new Contestant("James", "Cordin", "hates@whisky.com", 4);
-            Contestant contestant5 = new Contestant("Katie", "Gladwell", "yummy@whisky.com", 5);
+            //Contestant contestant6 = UserInterface.AddConstestant();
+            //Contestant contestant7 = UserInterface.AddConstestant();
+            Contestant contestant3 = UserInterface.AddConstestant("Smith", "Longbottom", "sipping@whisky.com");
+            Contestant contestant4 = UserInterface.AddConstestant("James", "Cordin", "hates@whisky.com");
+            Contestant contestant5 = UserInterface.AddConstestant("Katie", "Gladwell", "yummy@whisky.com");
+            Contestant contestant1 = UserInterface.AddConstestant("Jim", "Beam", "drinks@whisky.com");
+            Contestant contestant2 = UserInterface.AddConstestant("Bob", "Willbert", "chug@whisky.com");
 
-            
+
         }
     }
 }

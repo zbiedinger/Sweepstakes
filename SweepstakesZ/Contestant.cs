@@ -13,8 +13,6 @@ namespace SweepstakesZ
         private string lastName;
         private string email;
         private int registrationNum;
-        private int value = 0;
-
 
         //Properties
         public string FirstName { get => firstName; }
@@ -36,10 +34,10 @@ namespace SweepstakesZ
 
 
 
-        public int GetNextValue()
-        {
-            return System.Threading.Interlocked.Increment(ref this.value);
-        }
+        //public int GetNextValue()
+        //{
+        //    return System.Threading.Interlocked.Increment(ref this.value);
+        //}
         
     }
 }
