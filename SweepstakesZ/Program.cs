@@ -18,7 +18,14 @@ namespace SweepstakesZ
             Contestant contestant1 = UserInterface.AddConstestant("Jim", "Beam", "drinks@whisky.com");
             Contestant contestant2 = UserInterface.AddConstestant("Bob", "Willbert", "chug@whisky.com");
 
+            Sweepstakes toyota = new Sweepstakes("Toyota");
+            toyota.RegisterContestant(contestant1);
+            toyota.RegisterContestant(contestant2);
+            toyota.RegisterContestant(contestant3);
+            toyota.RegisterContestant(contestant4);
+            toyota.RegisterContestant(contestant5);
 
+            Contestant winner = toyota.PickWinner();
         }
     }
 }

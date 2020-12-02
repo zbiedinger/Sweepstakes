@@ -8,7 +8,7 @@ namespace SweepstakesZ
 {
     static class UserInterface
     {
-        static int registrationNum = 1;
+        static int registrationNum = 0;
 
 
         //Creates a contestant from userinput
@@ -39,8 +39,8 @@ namespace SweepstakesZ
         public static void ChangeEmail(Contestant contestant)
         {
             Console.WriteLine("\nEnter updated email address:");
-            contestant.Email = Console.ReadLine();
-            Console.WriteLine($"\n{contestant.FirstName}'s email address has been changed to {contestant.Email}");
+            contestant.email = Console.ReadLine();
+            Console.WriteLine($"\n{contestant.firstName}'s email address has been changed to {contestant.email}");
         }
     }
 }
