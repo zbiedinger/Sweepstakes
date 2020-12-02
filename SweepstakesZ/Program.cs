@@ -12,22 +12,6 @@ namespace SweepstakesZ
         {
             Simulation simulation = new Simulation();
             simulation.Simulate();
-
-            Contestant contestant3 = UserInterface.AddConstestant("Smith", "Longbottom", "sipping@whisky.com");
-            Contestant contestant4 = UserInterface.AddConstestant("James", "Cordin", "hates@whisky.com");
-            Contestant contestant5 = UserInterface.AddConstestant("Katie", "Gladwell", "yummy@whisky.com");
-            Contestant contestant1 = UserInterface.AddConstestant("Jim", "Beam", "drinks@whisky.com");
-            Contestant contestant2 = UserInterface.AddConstestant("Bob", "Willbert", "chug@whisky.com");
-
-            Sweepstakes toyota = new Sweepstakes("Toyota");
-
-            toyota.RegisterContestant(contestant1);
-            toyota.RegisterContestant(contestant2);
-            toyota.RegisterContestant(contestant3);
-            toyota.RegisterContestant(contestant4);
-            toyota.RegisterContestant(contestant5);
-
-            Contestant winner = toyota.PickWinner();
         }
     }
 }

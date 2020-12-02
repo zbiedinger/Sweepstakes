@@ -9,6 +9,7 @@ namespace SweepstakesZ
     class MarketingFirm
     {
 
+
         public MarketingFirm()
         {
 
@@ -24,9 +25,7 @@ namespace SweepstakesZ
             Contestant contestant1 = UserInterface.AddConstestant("Jim", "Beam", "drinks@whisky.com");
             Contestant contestant2 = UserInterface.AddConstestant("Bob", "Willbert", "chug@whisky.com");
 
-            Sweepstakes toyota = new Sweepstakes("Toyota");
-
-
+            Sweepstakes toyota = CreateSweepstakes("Toyota");
 
             toyota.RegisterContestant(contestant1);
             toyota.RegisterContestant(contestant2);
@@ -35,6 +34,12 @@ namespace SweepstakesZ
             toyota.RegisterContestant(contestant5);
 
             Contestant winner = toyota.PickWinner();
+        }
+
+        public Sweepstakes CreateSweepstakes(string name)
+        {
+            Sweepstakes newSweepstakes = new Sweepstakes(name);
+            return newSweepstakes;
         }
     }
 }

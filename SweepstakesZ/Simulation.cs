@@ -23,7 +23,7 @@ namespace SweepstakesZ
             while (willProceed)
             {
                 GetterDoneMarketing.BeginSweepstakes();
-                willProceed = UserInterface.ContinuePrompt("Continue to next transaction?");
+                willProceed = UserInterface.ContinuePrompt("Continue to next Sweepstake?");
                 Console.Clear();
             }
 

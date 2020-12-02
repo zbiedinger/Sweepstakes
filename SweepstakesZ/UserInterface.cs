@@ -36,6 +36,7 @@ namespace SweepstakesZ
             return newContestant;
         }
 
+        //Changes a passed contestants email address with user input
         public static void ChangeEmail(Contestant contestant)
         {
             Console.WriteLine("\nEnter updated email address:");

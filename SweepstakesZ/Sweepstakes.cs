@@ -26,7 +26,7 @@ namespace SweepstakesZ
         {
             this.Name = Name;
             registeredContestants = new Dictionary<int, Contestant>();
-            registrationNum = 1;
+            registrationNum = 1000;
             rand = new Random();
         }
 
@@ -44,8 +44,7 @@ namespace SweepstakesZ
         //Picks a winning contestant at random from the list of regisered contestants
         public Contestant PickWinner()
         {
-            int winningNumber = 1 + rand.Next(registeredContestants.Count);
-            
+            int winningNumber = 1001 + rand.Next(registeredContestants.Count);
             while (!RegisteredContestants.TryGetValue(winningNumber, out Winner)) { }
             
             Console.WriteLine($"\nThe {name} sweepstakes winner is {Winner.firstName} {Winner.lastName}!!");
