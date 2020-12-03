@@ -8,13 +8,19 @@ namespace SweepstakesZ
 {
     class MarketingFirm
     {
+        //Member variabels
+        private ISweepstakesManager Manager;
 
+        //Properties
+        public ISweepstakesManager manager { get => Manager; }
 
-        public MarketingFirm()
+        //Constructor
+        public MarketingFirm(ISweepstakesManager manager)
         {
-
+            Manager = manager;
         }
 
+        //Member methods
         public void BeginSweepstakes()
         {
             //Contestant contestant6 = UserInterface.AddConstestant();
@@ -26,6 +32,9 @@ namespace SweepstakesZ
             Contestant contestant2 = UserInterface.AddConstestant("Bob", "Willbert", "chug@whisky.com");
 
             Sweepstakes toyota = CreateSweepstakes("Toyota");
+            Sweepstakes mcdonalds = CreateSweepstakes("McDonalds");
+            Sweepstakes swimsuit = CreateSweepstakes("Swim Suit");
+
 
             toyota.RegisterContestant(contestant1);
             toyota.RegisterContestant(contestant2);
@@ -39,6 +48,8 @@ namespace SweepstakesZ
         public Sweepstakes CreateSweepstakes(string name)
         {
             Sweepstakes newSweepstakes = new Sweepstakes(name);
+            manager.InsertSweepstakes(newSweepstakes);
+            
             return newSweepstakes;
         }
     }

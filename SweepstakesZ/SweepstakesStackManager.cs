@@ -10,7 +10,7 @@ namespace SweepstakesZ
     {
         Stack<Sweepstakes> sweepStack = new Stack<Sweepstakes>();
 
-
+        //Addes a passed in sweepstakes to the top of the stack
         public void InsertSweepstakes(Sweepstakes sweepstake)
         {
             sweepStack.Push(sweepstake);
@@ -24,8 +24,8 @@ namespace SweepstakesZ
 
         public Sweepstakes GetSweepstakes()
         {
-
-            return null;
+            Sweepstakes sweepToReturn = sweepStack.Pop();
+            return sweepToReturn;
         }
 
     }       

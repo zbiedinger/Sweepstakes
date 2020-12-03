@@ -10,6 +10,27 @@ namespace SweepstakesZ
     {
         static int registrationNum = 0;
 
+        //Setup
+        public static void Setup()
+        {
+            Console.WriteLine("\nWelcome to your very own sweepstakes starter kit!");
+            bool istrue = ContinuePrompt("Are you ready to get started ? (y/n)");
+            if (!istrue)
+            {
+                Console.WriteLine("To bad we are going anyways.");
+            }
+        }
+
+        public static void MenuPage()
+        {
+            Console.WriteLine("\n        Menu Page" +
+                                "     --------------");
+            Console.WriteLine("What would you like to do?\n");
+            Console.WriteLine("1. Create Sweepstakes        2. Add Contestant");
+            Console.WriteLine("3. Pick A Winner             4. Display Contestants");
+            Console.WriteLine("5. Display Winner");
+        }
+
 
         //Creates a contestant from userinput
         public static Contestant AddConstestant()

@@ -8,10 +8,9 @@ namespace SweepstakesZ
 {
     class SweepstakesQueueManager : ISweepstakesManager
     {
-
         Queue<Sweepstakes> sweepQueue = new Queue<Sweepstakes>();
 
-
+        //Addes a passed in sweepstakes to the end od the queue
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             sweepQueue.Enqueue(sweepstakes);
@@ -25,8 +24,8 @@ namespace SweepstakesZ
 
         public Sweepstakes GetSweepstakes()
         {
-
-            return null;
+            Sweepstakes sweepToReturn = sweepQueue.Dequeue();
+            return sweepToReturn;
         }
     }
 }

@@ -51,6 +51,7 @@ namespace SweepstakesZ
             return Winner;
         }
 
+
         public void PrintContestantInfo(Contestant contestant)
         {
             Console.WriteLine("Contestant Information:\n");
