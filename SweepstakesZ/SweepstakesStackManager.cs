@@ -15,11 +15,7 @@ namespace SweepstakesZ
         {
             sweepStack.Push(sweepstake);
 
-            Console.WriteLine("Elements in stack: ");
-            foreach (Sweepstakes sweep in sweepStack)
-            {
-                Console.WriteLine(sweep.name);
-            }
+ 
         }
 
         public Sweepstakes GetSweepstakes()

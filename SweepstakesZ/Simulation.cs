@@ -9,7 +9,7 @@ namespace SweepstakesZ
     class Simulation
     {
         MarketingFirm GetterDoneMarketing;
-        ISweepstakesManager sweepManager;
+        //ISweepstakesManager sweepManager;
         
 
         public Simulation()
@@ -26,7 +26,7 @@ namespace SweepstakesZ
             {
                 UserInterface.Setup();
                 CreateMarketingFirmManager();
-                GetterDoneMarketing = new MarketingFirm(sweepManager);
+                //GetterDoneMarketing = new MarketingFirm(sweepManager);
 
                 GetterDoneMarketing.BeginSweepstakes();
                
@@ -45,7 +45,9 @@ namespace SweepstakesZ
             {
                 case "1":
                 case "stack":
-                    sweepManager = new SweepstakesStackManager();
+                    ISweepstakesManager sweepManager = new SweepstakesStackManager();
+                    GetterDoneMarketing = new MarketingFirm(sweepManager);
+
                     break;
                 case "2":
                 case "queue":

@@ -15,11 +15,11 @@ namespace SweepstakesZ
         {
             sweepQueue.Enqueue(sweepstakes);
 
-            Console.WriteLine("Elements in stack: ");
-            foreach (Sweepstakes sweep in sweepQueue)
-            {
-                Console.WriteLine(sweep.name);
-            }
+            //Console.WriteLine("Elements in stack: ");
+            //foreach (Sweepstakes sweep in sweepQueue)
+            //{
+            //    Console.WriteLine(sweep.name);
+            //}
         }
 
         public Sweepstakes GetSweepstakes()

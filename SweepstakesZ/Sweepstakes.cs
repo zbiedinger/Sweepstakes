@@ -8,9 +8,9 @@ namespace SweepstakesZ
 {
     class Sweepstakes
     {
-        //member variables
+        //Member variables
         private string Name;
-        private Dictionary<int, Contestant> registeredContestants;
+        public  Dictionary<int, Contestant> registeredContestants;
         private Contestant Winner;
         static int registrationNum;
 
@@ -18,7 +18,8 @@ namespace SweepstakesZ
 
         //Properties
         public string name { get => Name; }
-        public Dictionary<int, Contestant> RegisteredContestants { get => registeredContestants; }
+        public Contestant winner { get => Winner; }
+
 
 
         //Constructor
@@ -37,15 +38,15 @@ namespace SweepstakesZ
         {
             registeredContestants.Add(registrationNum, contestant);
             registrationNum++;
-            Console.WriteLine($"\n{contestant.firstName} {contestant.lastName} has" +
-                $" been registered for the {name} sweepstakes!");
+            //Console.WriteLine($"\n{contestant.firstName} {contestant.lastName} has" +
+            //    $" been registered for the {name} sweepstakes!");
         }
 
         //Picks a winning contestant at random from the list of regisered contestants
         public Contestant PickWinner()
         {
             int winningNumber = 1001 + rand.Next(registeredContestants.Count);
-            while (!RegisteredContestants.TryGetValue(winningNumber, out Winner)) { }
+            while (!registeredContestants.TryGetValue(winningNumber, out Winner)) { }
             
             Console.WriteLine($"\nThe {name} sweepstakes winner is {Winner.firstName} {Winner.lastName}!!");
             return Winner;
@@ -56,9 +57,21 @@ namespace SweepstakesZ
         {
             Console.WriteLine("Contestant Information:\n");
             Console.WriteLine($"First Name: {contestant.firstName}");
-            Console.WriteLine($"Last Name: {contestant.lastName}");
+            Console.WriteLine($"Last Name:  {contestant.lastName}");
             Console.WriteLine($"E-mail Address: {contestant.email}");
-            Console.WriteLine($"Registration #: {contestant.registrationNum}\n");
+            Console.WriteLine($"Registration #: {contestant.registrationNum}");
+            if (Winner==null)
+            {
+                Console.WriteLine($"\n       Winner of the {name} sweepstakes not yet chosen.\n");
+            }
+            else if(Winner.registrationNum == contestant.registrationNum)
+            {
+                Console.WriteLine($"\n       Winner of the {name} sweepstakes!\n");
+            }
+            else
+            {
+                Console.WriteLine($"\n       Did not win the {name} sweepstakes.\n");
+            }
         }
     }
 }

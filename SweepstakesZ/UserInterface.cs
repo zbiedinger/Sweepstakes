@@ -17,13 +17,13 @@ namespace SweepstakesZ
             bool istrue = ContinuePrompt("Are you ready to get started ? (y/n)");
             if (!istrue)
             {
-                Console.WriteLine("To bad we are going anyways.");
+                Console.WriteLine("To bad we are going anyways.\n");
             }
         }
 
         public static void MenuPage()
         {
-            Console.WriteLine("\n        Menu Page" +
+            Console.WriteLine("\n        Menu Page\n" +
                                 "     --------------");
             Console.WriteLine("What would you like to do?\n");
             Console.WriteLine("1. Create Sweepstakes        2. Add Contestant");

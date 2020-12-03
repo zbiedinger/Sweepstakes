@@ -9,20 +9,21 @@ namespace SweepstakesZ
     class MarketingFirm
     {
         //Member variabels
-        private ISweepstakesManager Manager;
+        private ISweepstakesManager manager;
 
         //Properties
-        public ISweepstakesManager manager { get => Manager; }
+        public ISweepstakesManager Manager { get => manager; }
 
         //Constructor
         public MarketingFirm(ISweepstakesManager manager)
         {
-            Manager = manager;
+            manager = manager;
         }
 
         //Member methods
         public void BeginSweepstakes()
         {
+            //UserInterface.MenuPage();
             //Contestant contestant6 = UserInterface.AddConstestant();
             //Contestant contestant7 = UserInterface.AddConstestant();
             Contestant contestant3 = UserInterface.AddConstestant("Smith", "Longbottom", "sipping@whisky.com");
@@ -34,15 +35,23 @@ namespace SweepstakesZ
             Sweepstakes toyota = CreateSweepstakes("Toyota");
             Sweepstakes mcdonalds = CreateSweepstakes("McDonalds");
             Sweepstakes swimsuit = CreateSweepstakes("Swim Suit");
-
-
+            
             toyota.RegisterContestant(contestant1);
             toyota.RegisterContestant(contestant2);
             toyota.RegisterContestant(contestant3);
             toyota.RegisterContestant(contestant4);
             toyota.RegisterContestant(contestant5);
+            toyota.PrintContestantInfo(contestant5);            
 
             Contestant winner = toyota.PickWinner();
+
+            Sweepstakes temp = manager.GetSweepstakes();
+            temp.PrintContestantInfo(contestant2);
+
+            //toyota.PrintContestantInfo(contestant1);
+            //toyota.PrintContestantInfo(winner);
+            
+
         }
 
         public Sweepstakes CreateSweepstakes(string name)
