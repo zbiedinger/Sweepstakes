@@ -8,20 +8,23 @@ namespace SweepstakesZ
 {
     class SweepstakesQueueManager : ISweepstakesManager
     {
+        //Memeber Variables
         Queue<Sweepstakes> sweepQueue = new Queue<Sweepstakes>();
 
+        //Constructor
+        public SweepstakesQueueManager()
+        {
+
+        }
+
+        //Member Methods
         //Addes a passed in sweepstakes to the end od the queue
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             sweepQueue.Enqueue(sweepstakes);
-
-            //Console.WriteLine("Elements in stack: ");
-            //foreach (Sweepstakes sweep in sweepQueue)
-            //{
-            //    Console.WriteLine(sweep.name);
-            //}
         }
 
+        //Removes the First Sweepstakes added in the Queue and rerurns it
         public Sweepstakes GetSweepstakes()
         {
             Sweepstakes sweepToReturn = sweepQueue.Dequeue();

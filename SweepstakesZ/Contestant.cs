@@ -9,25 +9,25 @@ namespace SweepstakesZ
     class Contestant
     {
         //Member Variables
-        private string FirstName;
-        private string LastName;
-        private string Email;
-        private int RegistrationNum;
+        private string firstName;
+        private string lastName;
+        private string email;
+        private int registrationNum;
 
         //Properties
-        public string firstName { get => FirstName; }
-        public string lastName { get => LastName; }
-        public string email { get => Email; set => Email = value; }
-        public int registrationNum { get => RegistrationNum; }
+        public string FirstName { get => firstName; }
+        public string LastName { get => lastName; }
+        public string Email { get => email; set => email = value; }
+        public int RegistrationNum { get => registrationNum; }
 
 
         //Constructor
         public Contestant(string firstName, string lastName, string Email, int registrationNum)
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
+            this.firstName = firstName;
+            this.lastName = lastName;
             this.email = Email;
-            this.RegistrationNum = registrationNum;
+            this.registrationNum = registrationNum;
         }
 
         //Member Method

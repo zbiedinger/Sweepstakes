@@ -8,15 +8,14 @@ namespace SweepstakesZ
 {
     class Simulation
     {
-        MarketingFirm GetterDoneMarketing;
-        //ISweepstakesManager sweepManager;
+        //Member Variables
+        MarketingFirm myMarketingFirm;
         
-
+        //Constructor
         public Simulation()
         {
 
         }
-
 
         //Member Methods
         public void Simulate()
@@ -25,18 +24,21 @@ namespace SweepstakesZ
             while (willProceed)
             {
                 UserInterface.Setup();
-                CreateMarketingFirmManager();
-                //GetterDoneMarketing = new MarketingFirm(sweepManager);
 
-                GetterDoneMarketing.BeginSweepstakes();
+                CreateMarketingFirmManager();
+                myMarketingFirm.BeginSweepstakes();
                
                 willProceed = UserInterface.ContinuePrompt("Continue to next Sweepstake?");
                 Console.Clear();
             }
 
         }
+
+        //Instantiates a SweepstakesManaget of Stack or Queue type
+        //based on user input with a factory pattern
         public void CreateMarketingFirmManager()
         {
+            ISweepstakesManager sweepManager;
             Console.WriteLine("What type of manager do you want?\n" +
                 "1. Stack     2. Queue");
 
@@ -45,13 +47,14 @@ namespace SweepstakesZ
             {
                 case "1":
                 case "stack":
-                    ISweepstakesManager sweepManager = new SweepstakesStackManager();
-                    GetterDoneMarketing = new MarketingFirm(sweepManager);
+                     sweepManager = new SweepstakesStackManager();
+                    CreateMarketingFirm(sweepManager);
 
                     break;
                 case "2":
                 case "queue":
                     sweepManager = new SweepstakesQueueManager();
+                    CreateMarketingFirm(sweepManager);
                     break;
                 default:
                     Console.WriteLine("\nInvalid input");
@@ -59,6 +62,12 @@ namespace SweepstakesZ
                 "1. Stack     2. Queue");
                     break;
             }
+        }
+
+        //Instantiates a MarketingFirm with passed SweepstakesManger
+        public void CreateMarketingFirm(ISweepstakesManager managerType)
+        {
+            myMarketingFirm = new MarketingFirm(managerType);
         }
     }
 }
