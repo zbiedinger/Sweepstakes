@@ -21,16 +21,6 @@ namespace SweepstakesZ
             }
         }
 
-        public static void MenuPage()
-        {
-            Console.WriteLine("\n        Menu Page\n" +
-                                "     --------------");
-            Console.WriteLine("What would you like to do?\n");
-            Console.WriteLine("1. Create Sweepstakes        2. Add Contestant");
-            Console.WriteLine("3. Pick A Winner             4. Display Contestants");
-            Console.WriteLine("5. Display Winner");
-        }
-
 
         //Creates a contestant from userinput
         public static Contestant AddConstestant()
@@ -48,6 +38,7 @@ namespace SweepstakesZ
             Contestant newContestant = new Contestant(firstname, lastname, emailAddress, registrationNum);
             return newContestant;
         }
+        
         //creates a contestant from passed values
         public static Contestant AddConstestant(string firstname, string lastname, string emailAddress)
         {
@@ -61,8 +52,8 @@ namespace SweepstakesZ
         public static void ChangeEmail(Contestant contestant)
         {
             Console.WriteLine("\nEnter updated email address:");
-            contestant.email = Console.ReadLine();
-            Console.WriteLine($"\n{contestant.firstName}'s email address has been changed to {contestant.email}");
+            contestant.Email = Console.ReadLine();
+            Console.WriteLine($"\n{contestant.FirstName}'s email address has been changed to {contestant.Email}");
         }
 
         //Used for any user prompts that use a yes or now format.
