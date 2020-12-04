@@ -34,7 +34,7 @@ namespace SweepstakesZ
 
         }
 
-        //Instantiates a SweepstakesManaget of Stack or Queue type
+        //Instantiates a SweepstakesManager of Stack or Queue type
         //based on user input with a factory pattern
         public void CreateMarketingFirmManager()
         {
@@ -64,7 +64,8 @@ namespace SweepstakesZ
             }
         }
 
-        //Instantiates a MarketingFirm with passed SweepstakesManger
+        //Instantiates a MarketingFirm with the data structure of 
+        //passed SweepstakesManger.
         public void CreateMarketingFirm(ISweepstakesManager managerType)
         {
             myMarketingFirm = new MarketingFirm(managerType);

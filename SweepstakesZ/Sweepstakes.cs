@@ -13,13 +13,12 @@ namespace SweepstakesZ
         public  Dictionary<int, Contestant> registeredContestants;
         private Contestant winner;
         static int registrationNum;
-
         Random rand;
+
 
         //Properties
         public string Name { get => name; }
         public Contestant Winner { get => winner; }
-
 
 
         //Constructor
@@ -38,8 +37,6 @@ namespace SweepstakesZ
         {
             registeredContestants.Add(registrationNum, contestant);
             registrationNum++;
-            //Console.WriteLine($"\n{contestant.firstName} {contestant.lastName} has" +
-            //    $" been registered for the {name} sweepstakes!");
         }
 
         //Picks a winning contestant at random from the list of regisered contestants

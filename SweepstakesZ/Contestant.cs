@@ -14,6 +14,7 @@ namespace SweepstakesZ
         private string email;
         private int registrationNum;
 
+
         //Properties
         public string FirstName { get => firstName; }
         public string LastName { get => lastName; }
@@ -29,15 +30,5 @@ namespace SweepstakesZ
             this.email = Email;
             this.registrationNum = registrationNum;
         }
-
-        //Member Method
-
-
-
-        //public int GetNextValue()
-        //{
-        //    return System.Threading.Interlocked.Increment(ref this.value);
-        //}
-        
     }
 }

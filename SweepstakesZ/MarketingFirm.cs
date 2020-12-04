@@ -15,17 +15,19 @@ namespace SweepstakesZ
         public ISweepstakesManager Manager { get => manager; }
 
         //Constructor
+        //Dependency injection is used to allow either a Queue or
+        //Stack data structure SweepstakesManager upon instantiating the 
+        //MarketingFirm. This happens in the CreateMarketingFirmManager() method
         public MarketingFirm(ISweepstakesManager manager)
         {
-            manager = manager;
+            this.manager = manager;
         }
 
         //Member methods
         public void BeginSweepstakes()
         {
-            //UserInterface.MenuPage();
             //Contestant contestant6 = UserInterface.AddConstestant();
-            //Contestant contestant7 = UserInterface.AddConstestant();
+            Contestant contestant7 = UserInterface.AddConstestant();
             Contestant contestant3 = UserInterface.AddConstestant("Smith", "Longbottom", "sipping@whisky.com");
             Contestant contestant4 = UserInterface.AddConstestant("James", "Cordin", "hates@whisky.com");
             Contestant contestant5 = UserInterface.AddConstestant("Katie", "Gladwell", "yummy@whisky.com");
@@ -51,7 +53,6 @@ namespace SweepstakesZ
             //toyota.PrintContestantInfo(contestant1);
             //toyota.PrintContestantInfo(winner);
             
-
         }
 
         public Sweepstakes CreateSweepstakes(string name)
